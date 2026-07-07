@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ramp Dashboard — Vendor Training Ledger</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="topbar__brand" href="index.html">
+    <strong>Training Ledger</strong>
+    <span>Members / Consumer Money</span>
+  </a>
+  <nav class="tabs">
+    <a href="index.html">Training</a>
+    <a href="dashboard.html" class="active">Ramp Dashboard</a>
+  </nav>
+</div>
+
+<main>
+  <div class="ledger-head">
+    <p class="ledger-head__eyebrow">Ramp Performance</p>
+    <h1>Cohort Ramp Dashboard</h1>
+    <p>Time-to-production, certification pass rates, and cohort health for teams ramping on Benefits and Members / Consumer Money. This page is a working layout — every number below is sample data.</p>
+  </div>
+
+  <div class="dash-banner">
+    <span class="dash-banner__dot"></span>
+    <span><b>Sample data.</b> This dashboard isn't wired to a live source yet — we'll connect it to the real reporting pipeline (Salesforce / WFM / assessment scores) once access is set up. Layout and metrics below are placeholders to validate the shape of the report.</span>
+  </div>
+
+  <div class="grid-stats">
+    <div class="stat">
+      <div class="stat__label">Active trainees</div>
+      <div class="stat__value">47</div>
+      <div class="stat__delta -up">↑ 12 vs last cohort</div>
+    </div>
+    <div class="stat">
+      <div class="stat__label">Avg. time to production</div>
+      <div class="stat__value">24.5d</div>
+      <div class="stat__delta -down">↓ 1.2d vs target</div>
+    </div>
+    <div class="stat">
+      <div class="stat__label">Certification pass rate</div>
+      <div class="stat__value">88%</div>
+      <div class="stat__delta -up">↑ 4pt vs last cohort</div>
+    </div>
+    <div class="stat">
+      <div class="stat__label">30-day attrition</div>
+      <div class="stat__value">9%</div>
+      <div class="stat__delta -down">↓ 2pt vs target</div>
+    </div>
+  </div>
+
+  <div class="panel-grid">
+    <div class="panel">
+      <h3>Cohort progress by week</h3>
+      <svg viewBox="0 0 560 220" width="100%" role="img" aria-label="Line chart of cumulative trainees certified by week, rising from week 1 through week 4">
+        <line x1="40" y1="180" x2="540" y2="180" stroke="#D8D2C0" stroke-width="1"/>
+        <line x1="40" y1="20" x2="40" y2="180" stroke="#D8D2C0" stroke-width="1"/>
+        <!-- gridlines -->
+        <line x1="40" y1="140" x2="540" y2="140" stroke="#EDE9DD" stroke-width="1"/>
+        <line x1="40" y1="100" x2="540" y2="100" stroke="#EDE9DD" stroke-width="1"/>
+        <line x1="40" y1="60" x2="540" y2="60" stroke="#EDE9DD" stroke-width="1"/>
+        <!-- Benefits track line (teal) -->
+        <polyline points="90,168 220,150 350,110 480,55" fill="none" stroke="#3F6E5B" stroke-width="2.5"/>
+        <circle cx="90" cy="168" r="4" fill="#3F6E5B"/>
+        <circle cx="220" cy="150" r="4" fill="#3F6E5B"/>
+        <circle cx="350" cy="110" r="4" fill="#3F6E5B"/>
+        <circle cx="480" cy="55" r="4" fill="#3F6E5B"/>
+        <!-- Members / Money track line (amber) -->
+        <polyline points="90,172 220,160 350,130 480,80" fill="none" stroke="#B8863B" stroke-width="2.5" stroke-dasharray="5 3"/>
+        <circle cx="90" cy="172" r="4" fill="#B8863B"/>
+        <circle cx="220" cy="160" r="4" fill="#B8863B"/>
+        <circle cx="350" cy="130" r="4" fill="#B8863B"/>
+        <circle cx="480" cy="80" r="4" fill="#B8863B"/>
+        <!-- x labels -->
+        <text x="90" y="198" font-family="IBM Plex Mono" font-size="11" fill="#3C463F" text-anchor="middle">Wk 1</text>
+        <text x="220" y="198" font-family="IBM Plex Mono" font-size="11" fill="#3C463F" text-anchor="middle">Wk 2</text>
+        <text x="350" y="198" font-family="IBM Plex Mono" font-size="11" fill="#3C463F" text-anchor="middle">Wk 3</text>
+        <text x="480" y="198" font-family="IBM Plex Mono" font-size="11" fill="#3C463F" text-anchor="middle">Wk 4</text>
+      </svg>
+      <div style="display:flex; gap:1.5rem; font-family:var(--font-mono); font-size:.78rem; margin-top:.5rem;">
+        <span><span style="display:inline-block;width:10px;height:10px;background:#3F6E5B;border-radius:2px;margin-right:.4rem;"></span>Benefits</span>
+        <span><span style="display:inline-block;width:10px;height:10px;background:#B8863B;border-radius:2px;margin-right:.4rem;"></span>Members / Consumer Money</span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Certification pass rate by module</h3>
+      <div style="display:flex; flex-direction:column; gap:.9rem; font-size:.85rem;">
+        <div>
+          <div style="display:flex; justify-content:space-between; margin-bottom:.25rem;"><span>Phone</span><span class="stat__delta" style="font-family:var(--font-mono);">92%</span></div>
+          <div style="background:#EDE9DD; border-radius:99px; height:8px;"><div style="width:92%; background:var(--teal); height:8px; border-radius:99px;"></div></div>
+        </div>
+        <div>
+          <div style="display:flex; justify-content:space-between; margin-bottom:.25rem;"><span>Chat</span><span style="font-family:var(--font-mono);">89%</span></div>
+          <div style="background:#EDE9DD; border-radius:99px; height:8px;"><div style="width:89%; background:var(--teal); height:8px; border-radius:99px;"></div></div>
+        </div>
+        <div>
+          <div style="display:flex; justify-content:space-between; margin-bottom:.25rem;"><span>Email</span><span style="font-family:var(--font-mono);">85%</span></div>
+          <div style="background:#EDE9DD; border-radius:99px; height:8px;"><div style="width:85%; background:var(--teal); height:8px; border-radius:99px;"></div></div>
+        </div>
+        <div>
+          <div style="display:flex; justify-content:space-between; margin-bottom:.25rem;"><span>Consumer Money (Wallet)</span><span style="font-family:var(--font-mono);">78%</span></div>
+          <div style="background:#EDE9DD; border-radius:99px; height:8px;"><div style="width:78%; background:var(--amber); height:8px; border-radius:99px;"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3>Current cohort roster</h3>
+    <table class="roster">
+      <thead>
+        <tr><th>Trainee</th><th>Track</th><th>Week</th><th>Last assessment</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Rica Bernadine Perez</td><td>Members / Consumer Money</td><td>4</td><td>94%</td><td><span class="pill -green">On track</span></td></tr>
+        <tr><td>Gerome Dacanay</td><td>Members / Consumer Money</td><td>4</td><td>81%</td><td><span class="pill -green">On track</span></td></tr>
+        <tr><td>Ellie Bolado</td><td>Benefits</td><td>3</td><td>73%</td><td><span class="pill -amber">Needs support</span></td></tr>
+        <tr><td>Andrea Abenojar</td><td>Benefits</td><td>2</td><td>91%</td><td><span class="pill -green">On track</span></td></tr>
+        <tr><td>Kraion Balagot</td><td>Members / Consumer Money</td><td>1</td><td>62%</td><td><span class="pill -red">At risk</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Next step</strong>
+    Once we have access to the live reporting source (Salesforce case data, WFM adherence, and LearnUpon assessment scores), this page swaps from sample data to a real feed — same layout, same metrics. Let me know which system to pull from first and I'll wire it up.
+  </div>
+</main>
+
+<footer>
+  Maintained from the Off the Street NH Training master sheet · last synced from source update 2026-06-26
+</footer>
+
+</body>
+</html>

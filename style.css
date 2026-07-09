@@ -494,6 +494,143 @@ table.roster td{ padding: .5rem; border-bottom: 1px solid var(--line); }
 .pill.-amber{ background: var(--warning-100); color: var(--warning-700); }
 .pill.-red{ background: var(--error-100); color: var(--error-500); }
 
+/* ---------- Section titles ---------- */
+
+.section-title{
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.6rem;
+  margin: 2.5rem 0 .4rem;
+  color: var(--ink);
+  border-left: 4px solid var(--guava);
+  padding-left: .75rem;
+}
+.section-sub{
+  color: var(--ink-soft);
+  margin: 0 0 1.25rem;
+  font-size: .92rem;
+}
+
+/* ---------- Training calendar grid ---------- */
+
+.training-calendar{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: .75rem;
+  margin-bottom: 1rem;
+  align-items: start;
+}
+.training-calendar.-nesting{
+  grid-template-columns: repeat(5, 1fr);
+}
+@media (max-width: 900px){
+  .training-calendar{ grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 600px){
+  .training-calendar{ grid-template-columns: repeat(2, 1fr); }
+}
+
+.day-tile{
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.day-tile summary{
+  cursor: pointer;
+  list-style: none;
+  padding: .85rem .9rem;
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  min-height: 84px;
+  border-left: 4px solid var(--kale);
+  position: relative;
+}
+.day-tile summary::-webkit-details-marker{ display: none; }
+.day-tile[open] summary{
+  border-left-color: var(--guava);
+  background: var(--salt-200);
+}
+.day-tile__num{
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--kale-800);
+}
+.day-tile__theme{
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+}
+.day-tile__hours{
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  color: var(--ink-soft);
+  position: absolute;
+  top: .85rem;
+  right: .75rem;
+}
+
+.day-tile__body{
+  padding: 0 1rem 1rem;
+  border-top: 1px solid var(--line);
+}
+.day-schedule{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.day-item{
+  padding: .65rem 0;
+  border-bottom: 1px dotted var(--line);
+}
+.day-item:last-child{ border-bottom: none; }
+.day-item__row{
+  display: flex;
+  align-items: baseline;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+.item-course{ font-weight: 600; font-size: .92rem; }
+.item-course a{ color: var(--ink); text-decoration-color: var(--salt-600); }
+.item-course a:hover{ color: var(--kale); text-decoration-color: var(--kale); }
+.item-dur{
+  font-family: var(--font-mono);
+  font-size: .75rem;
+  color: var(--ink-soft);
+  margin-left: auto;
+}
+.item-desc{
+  margin: .3rem 0 0;
+  font-size: .82rem;
+  color: var(--ink-soft);
+  line-height: 1.45;
+}
+
+.type-badge{
+  font-family: var(--font-mono);
+  font-size: .62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  padding: .1rem .4rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.type-badge.-ilt{ background: var(--kale-100); color: var(--kale-800); }
+.type-badge.-elt{ background: var(--guava-100); color: var(--guava-hover); }
+.type-badge.-activity{ background: var(--salt-300); color: var(--salt-800); }
+.type-badge.-casework{ background: var(--warning-100); color: var(--warning-700); }
+.type-badge.-quiz{ background: var(--error-100); color: var(--error-500); }
+.type-badge.-nesting{ background: var(--kale-800); color: #fff; }
+.type-badge.-shadowing{ background: var(--salt-600); color: #fff; }
+.type-badge.-default{ background: var(--salt-300); color: var(--salt-800); }
+
 /* ---------- Footer ---------- */
 
 footer{
